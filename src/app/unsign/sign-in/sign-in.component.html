@@ -1,0 +1,20 @@
+<div class="sign-in">
+    <form [formGroup]="formSignIn">
+        <div class="inputs">
+            <div class="error" *ngIf="message">
+                {{message}}
+            </div>
+            <input type="email" name="email" placeholder="Почта" class="e-mail" formControlName="email">
+            <span class="password">
+                <input type="password" name="password" placeholder="Пароль" id="password" formControlName="password">
+                <a class="password-view" (click)="show_hide_password()"></a>
+            </span>
+
+        </div>
+        <div class="buttons">
+            <button class="enter button-box-shadox" (click)="logIn()">Вход</button>
+            <button class="forgot-password">Забыли пароль?</button>
+        </div>
+    </form>
+
+</div>

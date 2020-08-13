@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+html{
+    padding: 0px 0px;
+    min-height: 100%;
+    width: 100%;
+    display: grid;
+    margin: 0px;
+}
+
+*{    
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+}
+
+body{
+    display: grid;
+    padding: 0px;
+    margin: 0px;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+button{
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.button-box-shadox{
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.triangle{
+    border: 8px solid transparent;
+    width: 0px;
+    height: 0px;
+}
+
+.left-triangle{
+    border-right: 14px solid #FFDF3B;
+}
+
+.right-triangle{
+    border-left: 14px solid #FFDF3B;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+app-root{
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.all{
+    padding: 0px 195px
+}
+
+.all .body{
+    height: 100%;
+}
+
+
+
+.body{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.sub-bar{
+    background-color: #FFDF3B;
+    display: grid;
+    grid-row-gap: 25px;
+    justify-items: center;
+    align-self: start;
+    padding: 40px 20px;
+    height: 100%;
+    max-height: 520px;
+}
+
+.sub-bar .name-menu{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sub-menu hr{
+    background-color: black;
+    height: 2px;
+    border: none;
+}
+
+.sub-bar .sub-menu{
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 22px;
+    display: grid;
+    grid-row-gap: 25px;
+}
+
+.sub-bar .sub-menu li{
+    cursor: pointer;
+}
+
+.sub-bar .sub-menu li:hover{
+    text-decoration: underline;
+}
+
+
+::-webkit-scrollbar{
+    width:12px;
+}
+  
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+  
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+  
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+  
+::-webkit-scrollbar-track:hover{
+    border-left: solid 1px #aaa;
+    background-color: #eee;
+}
+  

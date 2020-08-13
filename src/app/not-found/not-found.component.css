@@ -1,0 +1,17 @@
+.body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.body .message-not-found{
+    display: grid;
+    grid-row-gap: 30px;
+    justify-items: center;
+}
+
+.body .message-not-found p{
+    text-align: center;
+}

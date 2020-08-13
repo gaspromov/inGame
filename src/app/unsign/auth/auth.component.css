@@ -1,0 +1,84 @@
+.auth{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-window{
+    width: 600px;
+    height: 800px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    padding-top: 55px;
+    margin: 60px 0px;
+}
+
+.auth-window .auth-method{
+    align-self: start;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 66px;
+    justify-items: center;
+    align-items: center;
+    justify-self: center;
+}
+
+.auth-window .auth-method>span{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+}
+
+.auth-method>span>button{
+    grid-column: 1/3;
+}
+
+.who{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    grid-template-columns: auto auto;
+    grid-column-gap: 40px;
+    justify-items: center;
+    align-items: center;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.none{
+    opacity: 0;
+}
+
+.who>span{
+    cursor: pointer;
+}
+span.active{
+    font-weight: bold;
+}
+
+.auth-window .auth-method button:first-child{
+    align-self: start;
+}
+
+.auth-window .auth-method button{
+    background-color: inherit;
+    border: none;
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+    font-size: 26px;
+    cursor: pointer;
+    outline: none !important;
+}
+
+.auth-window .auth-method button.active_sign_in{
+    border-bottom: 4px solid #FFDF3B;
+}
+
+.auth-window .auth-method button.active_sign_up{
+    border-bottom: 4px solid #DD336A;
+}
+/* input:hover{
+    border: 1px solid rgb(95, 95, 95);
+} */

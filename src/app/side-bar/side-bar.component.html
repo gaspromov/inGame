@@ -1,0 +1,36 @@
+<div class="sub-bar" *ngIf="typeUser == 'serverowner'">
+    <span class="name-menu">Монетизация:</span> 
+    <ul class="sub-menu">
+        <li class="link">CPA</li>
+        <li class="link">Бренлинг реклама</li>
+        <span><hr></span>
+        <li class="link">Подключить сервер</li>
+        <li class="link">Мои сервера</li>
+        <span><hr></span>
+        <li class="link">Аккаунт</li>
+        <li class="link">Баланс</li>
+    </ul>
+</div>
+
+<div class="sub-bar" *ngIf="typeUser !== 'serverowner'">
+    <span class="name-menu">Виды рекламы</span> 
+
+    <span class="name-menu">СРА реклама</span> 
+    <ul class="sub-menu">
+        <li class="link">-Статистика
+            СРА кампаний</li>
+    </ul>
+
+    <span class="name-menu">СРА реклама</span> 
+    <ul class="sub-menu">
+        <li class="link">-Статистика
+            СРА кампаний</li>
+    </ul>
+
+    <span class="name-menu">Брендинг
+    реклама</span> 
+    <ul class="sub-menu">
+        <li class="link">-Статистика
+            СРА кампаний</li>
+    </ul>
+</div>
