@@ -1,0 +1,31 @@
+.tableServers{
+    display: grid;
+}
+
+.nameOfTd{
+    background-color: #FFDF3B;
+}
+
+.tr{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 60px;
+    justify-items: center;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.tr1{
+    background-color: #ECECEC;
+}
+
+.tr2{
+    background-color: none;
+}
+
+.circle{
+    width: 30px;
+    height: 30px;
+    background-color: #FFE533;
+
+}

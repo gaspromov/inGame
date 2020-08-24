@@ -1,0 +1,65 @@
+.body{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: center;
+}
+
+.content{
+    display: grid;
+    grid-row-gap: 100px;
+}
+
+.simple-input{
+    width: 260px;
+}
+
+select.simple-input{
+    width: 280px;
+
+    height: 48px;
+}
+
+h2.title{
+    margin-left: 20px;
+}
+
+form{
+    display: grid;
+    justify-items: start;
+    grid-row-gap: 100px;
+}
+
+.inputs{
+    display: grid;
+    grid-row-gap: 25px;
+    justify-items: start;
+}
+
+input[type=file]{
+    display: none;
+}
+
+
+span.title{
+    margin-right: 35px;
+}
+
+.modal{
+    /* display: grid; */
+    grid-row-gap: 15px;
+    margin-left: -260px;
+    margin-top: -180px;
+}
+
+.message{
+    height: 220px;
+    width: 520px;
+    background-color: #ffffff;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.modal button{
+    justify-self: end;
+}

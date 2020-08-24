@@ -1,0 +1,45 @@
+.body{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 75px;
+    margin-top: 95px;
+}
+
+.content{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-row-gap: 60px;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+.servers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 35px;
+    padding-top: 50px;
+}
+
+.server{
+    background-color: #F7F7F7;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-bottom: 8px solid #FFDF3B;
+}
+
+.server .name{
+    background-color: #FFDF3B;
+}
+
+.server .statistic{
+    justify-self: center;
+    align-self: center;
+}
+
+
+.pagination{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}

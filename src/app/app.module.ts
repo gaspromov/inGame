@@ -16,6 +16,13 @@ import { MainOwnerComponent } from './serverowner/main-owner/main-owner.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { MainAdvertComponent } from './advertiser/main-advert/main-advert.component';
+import { NewServerComponent } from './serverowner/new-server/new-server.component';
+import { MyServersComponent } from './serverowner/my-servers/my-servers.component';
+import { MonitoringAllComponent } from './monitoring/monitoring-all/monitoring-all.component';
+import { PaginationComponent } from './pagination/pagination.component';
+import { ViewAllServersComponent } from './monitoring/view-all-servers/view-all-servers.component';
+import { MonitoringSideBarComponent } from './monitoring/monitoring-side-bar/monitoring-side-bar.component';
+import { NewCpcComponent } from './advertiser/new-cpc/new-cpc.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,14 @@ import { MainAdvertComponent } from './advertiser/main-advert/main-advert.compon
     MainOwnerComponent,
     NotFoundComponent,
     SideBarComponent,
-    MainAdvertComponent
+    MainAdvertComponent,
+    NewServerComponent,
+    MyServersComponent,
+    MonitoringAllComponent,
+    PaginationComponent,
+    ViewAllServersComponent,
+    MonitoringSideBarComponent,
+    NewCpcComponent
     
   ],
   imports: [

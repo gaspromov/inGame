@@ -3,19 +3,19 @@
         
         <app-side-bar></app-side-bar>
         <div class="content">
-            <form action="" [formGroup]="formAdd" (submit)="postCPC()">
+            <form action="">
                 <div class="inputs">
                     <label for="name">Название кампании</label>
-                    <input type="text" id="name" class="simple-input" formControlName="name">
+                    <input type="text" id="name">
                     <label for="resource">Ссылка на рекламируемый ресурс</label>
-                    <input type="text" id="resource" class="simple-input" formControlName='promoURL'>
+                    <input type="text" id="resource">
                     <label for="CPA">СРА ставка</label>
-                    <input type="text" id="CPA" class="simple-input" formControlName="CPA">
+                    <input type="text" id="CPA">
                     <label for="clicks">Ссылка отслеживания clicks</label>
-                    <input type="text" id="clicks" class="simple-input" formControlName="originalURL">
+                    <input type="text" id="clicks">
                 </div>
                 <div class="buttons">
-                    <input type="submit" class="yellow-btn font-22 button-box-shadox" value="Создать">
+                    <button class="save button-box-shadox">Создать</button>
                 </div>
             </form>
         </div>

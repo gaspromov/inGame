@@ -21,8 +21,10 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+
+  ) { 
+  }
 
   ngOnInit() {
     if (this.typeUser == "advertiser"){
@@ -67,6 +69,7 @@ export class SignUpComponent implements OnInit {
 
     this.formSignUp.value.password = md5.appendAsciiStr(this.formSignUp.value.password).end();
     this.formSignUp.value.number = "+7" + String(this.formSignUp.value.number);
+    console.log(this.formSignUp.value)
 
     await this.auth.postNewUser(this.formSignUp.value)
     .then(w =>{

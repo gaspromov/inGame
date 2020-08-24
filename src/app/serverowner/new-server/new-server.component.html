@@ -1,0 +1,40 @@
+<main>
+    <div class="body">
+        
+        <app-side-bar></app-side-bar>
+        <div class="content">
+            <h2 class="title">Подключение сервера</h2>
+
+            <form action="" [formGroup]="formAdd" (submit)="newServer()">
+                <div class="inputs">
+                    <input type="text" class="simple-input" placeholder="IP сервера" formControlName="ip" name="server-ip">
+                    <input type="text" class="simple-input " placeholder="Порт" formControlName="port" name="server-port">
+                    <select class="simple-input" placeholder="Игра" formControlName="game">
+                        <option value="0" selected disabled>Игра</option>
+                        <option value="rust">RUST</option>
+                        <option value="minecraft">Minecraft</option>
+                        <option value="csgo">CS:GO</option>
+                    </select>
+                    <input type="text" class="simple-input" placeholder="Название проекта" formControlName="name">
+                    <input type="text" class="simple-input" placeholder="группа в VK" formControlName="vk" name="vk-group">
+                    <span class="font-22">
+                        <span class="title ">Логотип сервера</span><label for="logo-file" class="button-box-shadox yellow-btn font-22 pointer" id="button-upload">Загрузить</label>
+                        <input type="file" name="logo-file" id="logo-file" accept=".jpg, .jpeg, .png, .svg" (change)="addPhoto($event)" formControlName="logo">
+                    </span>
+
+                </div>
+                <input type="submit" id="createServer" class="button-box-shadox yellow-btn font-22" value="Подключить сервер">
+            </form>
+        </div>
+    
+    </div>
+</main>
+
+<div class="absolute-center modal ok" id="modal-success">
+    <div class="message">
+        <span class="font-36 text-center message">
+            <!-- Сервер {{formAdd.value.name}}<br>успешно добавлен! -->
+        </span>
+    </div>
+    <button class="yellow-btn button-box-shadox font-22" (click)="hidden('modal-success')">Ок</button>
+</div>

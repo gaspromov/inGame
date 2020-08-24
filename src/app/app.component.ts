@@ -13,6 +13,5 @@ export class AppComponent {
     if (localStorage.getItem('accessToken') != "" && localStorage.getItem('accessToken') != null){
       this.typeUser = JSON.parse(localStorage.getItem('user')).typeUser
     }
-
   }
 }

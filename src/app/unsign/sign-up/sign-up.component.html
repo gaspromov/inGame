@@ -5,26 +5,26 @@
             <div class="error" *ngIf="message">
                 {{message}}
             </div>
-            <span>*</span><input type="text" class="name" formControlName="name" placeholder="Название комании/имя/псевдоним">
+            <span>*</span><input type="text" id="name" class="name simple-input" formControlName="name" placeholder="Название комании/имя/псевдоним">
 
-            <span *ngIf="typeUser=='serverowner'"></span><input *ngIf="typeUser=='serverowner'" type="text" name="social" placeholder="Соц. сети проекта" class="social" formControlName="social">
+            <span *ngIf="typeUser=='serverowner'"></span><input *ngIf="typeUser=='serverowner'" type="text" name="social" placeholder="Соц. сети проекта" class="social simple-input" formControlName="social">
 
-            <span>*</span><input type="email" name="email" placeholder="Почта" class="email" formControlName="email">
+            <span>*</span><input type="email" name="email" placeholder="Почта" class="email simple-input" formControlName="email">
             
             <span>*</span>
             <span class="password">
-                <input type="password" name="password" placeholder="Пароль" id="password" formControlName="password">
+                <input type="password" name="password" placeholder="Пароль" id="password" class="simple-input" formControlName="password">
                 <a class="password-view" (click)="show_hide_password()"></a>
             </span>
 
             <span>*</span>
-            <input type="password" placeholder="Повторите пароль" class="password-repeat" [(ngModel)]="password_repeat" [ngModelOptions]="{standalone: true}">
+            <input type="password" placeholder="Повторите пароль" class="password-repeat simple-input" [(ngModel)]="password_repeat" [ngModelOptions]="{standalone: true}">
 
-            <span>*</span><input type="text" class="phone" placeholder="Телефон" name="phone" formControlName="number" mask="(000)000-00-00" prefix="+7" [showMaskTyped]="true">
+            <span>*</span><input type="text" class="phone simple-input" placeholder="Телефон" name="phone" formControlName="number" mask="(000)000-00-00" prefix="+7" [showMaskTyped]="true">
 
-            <span *ngIf="typeUser=='serverowner'">*</span><span *ngIf="typeUser !='serverowner'"></span><input type="text" name="telegram" id="telegram" formControlName="telegram" placeholder="Телеграм">
+            <span *ngIf="typeUser=='serverowner'">*</span><span *ngIf="typeUser !='serverowner'"></span><input type="text" name="telegram" class="simple-input" id="telegram" formControlName="telegram" placeholder="Телеграм">
 
-            <span *ngIf="typeUser=='serverowner'"></span><input *ngIf="typeUser=='serverowner'" type="text" name="vk" placeholder="Страница вконтакте" class="vk" formControlName="vk">
+            <span *ngIf="typeUser=='serverowner'"></span><input *ngIf="typeUser=='serverowner'" type="text" name="vk" placeholder="Страница вконтакте" class="vk simple-input" formControlName="vk">
         </div>
         <div class="checkbox">
             <span>*</span>
@@ -41,5 +41,7 @@
         </div>
         
     </form>
+
+    <span id="tk">iiiiiiiii</span>
 
 </div>

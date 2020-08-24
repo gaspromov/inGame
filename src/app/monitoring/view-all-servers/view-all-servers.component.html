@@ -1,0 +1,33 @@
+<div class="tableServers" *ngIf="servers[0] != null">
+    <div class="nameOfTd tr text-center">
+        <div class="td">Название сервера</div>
+        <div class="td">Online</div>
+        <div class="td">Брендинг</div>
+        <div class="td">СРП</div>
+        <div class="td">Средний охват</div>
+        <div class="td">Уникальный игрок</div>
+        <div class="td">Охват за месяц</div>
+    </div>
+    <div class="tr text-center" *ngFor="let server of servers, let index = index" [ngClass]="{'tr1': index%2==0}">
+        <div class="td name">{{server.name}}</div>
+        <div class="td online">{{server.onlinePlayers}}/{{server.maxPlayers}}</div>
+        <div class="td brending"><span class="circle"></span></div>
+        <div class="td srp"><span class="circle"></span></div>
+        <div class="td">{{server.coverageDay}}</div>
+        <div class="td uniqUsers">{{server.UPPM}}/мес</div>
+        <div class="td visits">{{server.coverageMonth}}/мес</div>        
+    </div>
+</div>
+
+<div class="tableServers" *ngIf="servers[0] == null">
+    <div class="nameOfTd tr text-center">
+        <div class="td">Название сервера</div>
+        <div class="td">Online</div>
+        <div class="td">Брендинг</div>
+        <div class="td">СРП</div>
+        <div class="td">Средний охват</div>
+        <div class="td">Уникальный игрок</div>
+        <div class="td">Количество посещений</div>
+    </div>
+    <h2 class="text-center">Тут пока ничего нет!</h2>
+</div>

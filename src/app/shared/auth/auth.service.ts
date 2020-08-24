@@ -16,8 +16,7 @@ export class AuthService {
     private http: HttpClient,
     private router: Router,
   ) { 
-    this.header = new HttpHeaders();
-    this.header.set('Content-type', 'application/json');
+    this.header = new HttpHeaders().set('Content-type', 'application/json');
   }
 
 
@@ -39,4 +38,5 @@ export class AuthService {
     localStorage.setItem("accessToken", data.accessToken);
     localStorage.setItem("user", JSON.stringify(data.user))
   }
+  
 }

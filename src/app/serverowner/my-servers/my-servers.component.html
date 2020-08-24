@@ -1,0 +1,28 @@
+<main>
+    
+    <div class="body">
+        
+        <app-side-bar></app-side-bar>
+        <div class="content">
+            <div class="servers" *ngIf="servers[0]">
+                <div class="server" *ngFor="let server of servers">
+                    <span class="name font-28 text-center">
+                        {{server.name}}
+                    </span>
+                    <div class="statistic">
+                        Online: {{server.onlinePlayers}} чел. <br>
+                        Доход: 3010 руб.
+                    </div>
+                </div>
+            </div>
+            <div class="servers" *ngIf="servers[0]">
+                <h2 class="text-center">Тут пока ничего нет!</h2>
+            </div>
+            <div class="pagination">
+                <span> <span class="pointer">&#60;</span> <span class="pointer">1</span> <span class="pointer">&#62;</span></span>
+            </div>
+        </div>
+    
+    </div>
+
+</main>

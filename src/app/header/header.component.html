@@ -1,10 +1,25 @@
 <header>
-    <img class="logo-header logo" src="assets/logo/logo.svg" alt="logo" routerLink="/main" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-    <span><a href="">Мониторинг</a><i class="fas fa-angle-down">
+    <img class="logo-header logo" src="assets/logo/logo.svg" alt="logo" routerLink="/main">
+    <span><a routerLink="/monitoring" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">Мониторинг</a><i class="fas fa-angle-down">
         <ul class="drop-down-menu monitoring">
-            <li><span class="triangle right-triangle"></span><img src="assets/game-logo/rust.svg" alt="logo"> <span class="text">RUST</span></li>
-            <li><span class="triangle right-triangle"></span><img src="assets/game-logo/cs-go.svg" alt="logo"><span class="text">CS:GO</span></li>
-            <li><span class="triangle right-triangle"></span><img src="assets/game-logo/minecraft.svg" alt="logo"><span class="text">Minecraft</span></li>
+            <li>
+                <a [routerLink]="['monitoring', 'rust']">
+                    <span class="triangle right-triangle"></span>
+                    <img src="assets/game-logo/rust.svg" alt="logo"> <span class="text">RUST</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['monitoring', 'cs:go']">
+                    <span class="triangle right-triangle"></span>
+                    <img src="assets/game-logo/cs-go.svg" alt="logo"><span class="text">CS:GO</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['monitoring', 'minecraft']">
+                    <span class="triangle right-triangle"></span>
+                    <img src="assets/game-logo/minecraft.svg" alt="logo"><span class="text">Minecraft</span>
+                </a>
+            </li>
         </ul>
     </i></span>
     <a href="reklamo" class="no-drop-down-menu">Рекламодатель</a>
@@ -13,12 +28,12 @@
         <a href="" routerLink="/login">Кабинет</a>
         <i class="fas fa-angle-down">
             <ul *ngIf="!typeUser" class="drop-down-menu cab">
-                <li>Сервовладелец <span class="triangle left-triangle"></span></li>
-                <li>Рекламодатель <span class="triangle left-triangle"></span></li>
+                <li> <a> Сервовладелец <span class="triangle left-triangle"></span> </a></li>
+                <li><a> Рекламодатель <span class="triangle left-triangle"></span></a></li>
             </ul>
             
             <ul *ngIf="typeUser" class="drop-down-menu cab">
-                <li class="logout" (click)="auth.logout()">Выйти <span class="triangle left-triangle"></span></li>
+                <li class="logout" (click)="auth.logout()"> <a> Выйти <span class="triangle left-triangle"></span></a></li>
             </ul>
         </i> 
     </span>

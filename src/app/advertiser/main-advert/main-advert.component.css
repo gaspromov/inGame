@@ -11,9 +11,8 @@ main{
 
 .content form{ 
     display: grid;
-    grid-template-rows: 1fr auto;
-    grid-row-gap: 120px;
-    height: 100%;
+    grid-template-rows: auto auto;
+    grid-row-gap: 35px;
 
 }
 
@@ -29,28 +28,6 @@ main{
 }
 
 .content form .buttons{
-    align-self: end;
-    justify-self: end;
-}
-
-form input{
-    background-color: #F0F0F0;
-    border: none;
-    width: 280px;
-    height: 40px;
-    font-size: 18px;
-    border: 2px solid rgba(255, 255, 255, 0) !important;
-    color: #8F8F8F;
-    padding-left: 15px;
-}
-
-
-form input:hover{
-    border: 2px solid rgb(167, 167, 167) !important;
-}
-
-form button{
-    background-color: #FFDF3B;
-    border: 0;
-    padding: 5px 25px;
+    align-self: start;
+    justify-self: start;
 }

@@ -10,7 +10,8 @@ export class AuthComponent implements OnInit {
   auth_method = 'sign-in';
   typeUser = "serverowner";
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
     

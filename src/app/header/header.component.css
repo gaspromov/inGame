@@ -81,21 +81,21 @@ header i{
 }
 
 
-.drop-down-menu.cab li{
+.drop-down-menu.cab li a{
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     padding: 8px 0px 8px 20px;
 }
 
-.drop-down-menu.monitoring li{
+.drop-down-menu.monitoring li a{
     display: grid;
     grid-template-columns: auto 25px 1fr;
     align-items: center;
     padding: 8px 20px 8px 0px;
 }
 
-.drop-down-menu.monitoring li :last-child{
+.drop-down-menu.monitoring li a :last-child{
     margin-left: 10px;
 }
 
@@ -110,4 +110,16 @@ header i{
 
 .no-drop-down-menu{
     margin-top: 3px;
+}
+
+.active{
+    border-bottom: 3px solid #FFDF3B;
+}
+
+.drop-down-menu a{
+    border: none;
+}
+
+.drop-down-menu a:hover{
+    border: none;
 }

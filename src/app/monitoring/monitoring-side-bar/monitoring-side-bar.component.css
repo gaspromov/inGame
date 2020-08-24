@@ -1,14 +1,19 @@
 .sub-bar{
     width: 165px;
-    
+    color: #292929;
 }
 
 li{
     outline: none;
 }
 
+li a{
+    color: black;
+}
+
 .active{
     font-weight: bold;
+    border-bottom: 3px solid #292929;
 }
 
 
@@ -47,6 +52,11 @@ li{
     cursor: pointer;
 }
 
+
 .sub-bar .sub-menu li:hover{
-    text-decoration: underline;
+    text-decoration: none !important;
+}
+
+a:hover{
+    border-bottom: 3px solid #292929;
 }

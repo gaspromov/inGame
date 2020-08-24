@@ -1,7 +1,7 @@
 <div class="auth">
     <div class="auth-window">
         <span class="who" [ngClass]="{none : auth_method != 'sign-up'}">
-            <span [ngClass]="{active: typeUser == 'serverowner'}" (click)="changeTypeUser()">Серверовладельцем</span>  <span [ngClass]="{active: typeUser != 'serverowner'}" (click)="changeTypeUser()">Рекламодателем</span> 
+            <span [ngClass]="{active: typeUser == 'serverowner'}" (click)="changeTypeUser()" >Серверовладельцем</span>  <span [ngClass]="{active: typeUser != 'serverowner'}" (click)="changeTypeUser()">Рекламодателем</span> 
         </span>
         <div class="auth-method">
             <button class="sign-in" [ngClass]="{active_sign_in:  auth_method == 'sign-in'}" (click)="changeMethod('sign-in')">Вход</button>
