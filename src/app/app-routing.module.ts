@@ -12,6 +12,8 @@ import { MainAdvertComponent } from './advertiser/main-advert/main-advert.compon
 import { NewServerComponent } from './serverowner/new-server/new-server.component';
 import { MyServersComponent } from './serverowner/my-servers/my-servers.component';
 import { MonitoringAllComponent } from './monitoring/monitoring-all/monitoring-all.component';
+import { SignInComponent } from './unsign/sign-in/sign-in.component';
+import { SignUpComponent } from './unsign/sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -19,13 +21,21 @@ const routes: Routes = [
   { path: "home", component: MainOwnerComponent, canActivate: [AuthGuard, IsOwnerGuard]},
   { path: "new-server", component: NewServerComponent, canActivate: [AuthGuard, IsOwnerGuard]},
   { path: "my-servers", component: MyServersComponent, canActivate: [AuthGuard, IsOwnerGuard]},
-  { path: "homePage", component: MainAdvertComponent,canActivate: [AuthGuard, IsAdvertGuard] },
-  { path: "login", component: AuthComponent, canActivate: [IsAuthGuard] },
+  { path: "homePage", component: MainAdvertComponent,canActivate: [AuthGuard, IsAdvertGuard] },  
+
+  { path: "auth", component: AuthComponent, canActivate: [IsAuthGuard], children: [
+    { path: "login/:type", component: SignInComponent },
+    { path: "sign-up/:type", component: SignUpComponent },
+  ]},
+
   { path: "monitoring/:game", component: MonitoringAllComponent },
   { path: "monitoring", redirectTo: "/monitoring/cs:go" },
   { path: "404", component: NotFoundComponent },
   { path: '', pathMatch: 'full', redirectTo: "/main"},
-  { path: "**", redirectTo: "/404"}
+  { path: "**", redirectTo: "/404"},
+
+
+
 ];
 
 @NgModule({

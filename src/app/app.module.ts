@@ -5,6 +5,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {NgxMaskModule} from "ngx-mask";
+// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { ViewAllServersComponent } from './monitoring/view-all-servers/view-all-servers.component';
 import { MonitoringSideBarComponent } from './monitoring/monitoring-side-bar/monitoring-side-bar.component';
 import { NewCpcComponent } from './advertiser/new-cpc/new-cpc.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { NewCpcComponent } from './advertiser/new-cpc/new-cpc.component';
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(/*options*/),
+    BrowserAnimationsModule,
+    // MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

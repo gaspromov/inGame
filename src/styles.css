@@ -2,7 +2,7 @@
 
 html{
     padding: 0px 0px;
-    min-height: 100%;
+    min-height: 100vh;
     width: 100%;
     display: grid;
     margin: 0px;
@@ -15,12 +15,14 @@ html{
 
 body{
     display: grid;
-    padding: 0px;
-    margin: 0px;
+    padding: 0px !important;
+    margin: 0px !important;
+    min-height: 100vh;
 }
 
 main{
     position: relative;
+    min-height: 100%;
 }
 
 p{
@@ -84,15 +86,28 @@ app-root{
     grid-template-rows: auto 1fr;
 }
 
+
 .all{
-    padding: 0px 195px;
     display: grid;
     grid-template-rows: auto 1fr;
 }
 
+@media (min-width: 1801px){
+    .all{
+        padding: 0px 350px;
+    }
+
+}
+
+@media (min-width: 1300px) and (max-width: 1800px){
+    .all{
+        padding: 0px 200px;
+    }
+}
+
 
 .all .body{
-    height: 100%;
+    min-height: 100%;
 }
 
 .body{
@@ -108,14 +123,11 @@ app-root{
     display: grid;
     grid-row-gap: 25px;
     justify-items: center;
-    align-self: start;
+    align-items: start;
     padding: 40px 20px;
-    height: 100%;
-    max-height: 520px;
 }
 
 .sub-bar .name-menu{
-    font-size: 24px;
     font-weight: bold;
 }
 
@@ -129,7 +141,6 @@ app-root{
     list-style: none;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 22px;
     display: grid;
     grid-row-gap: 25px;
 }
@@ -222,3 +233,53 @@ select, .pointer, button, input[type=submit]{
 .text-center{
     text-align: center;
 }
+
+.bold{
+    font-weight: bold;
+}
+
+@media (min-width: 1801px){
+    .font-26-20{
+        font-size: 26px;
+    }
+
+    .font-40-28{
+        font-size: 40px;
+    }
+
+    .font-22-18{
+        font-size: 22px;
+    }
+
+    .font-18-14{
+        font-size: 18px;
+    }
+
+    .font-20-16{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1800px){
+    .font-26-20{
+        font-size: 20px;
+    }
+
+    .font-40-28{
+        font-size: 28px;
+    }
+    
+    .font-22-18{
+        font-size: 18px;
+    }
+
+    .font-18-14{
+        font-size: 14px;
+    }
+    
+    .font-20-16{
+        font-size: 16px;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

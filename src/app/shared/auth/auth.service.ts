@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  url = "https://peaceful-sands-75853.herokuapp.com/api/v1/auth";
+  url = "https://ingame-ads.herokuapp.com/api/v1/auth";
   header: HttpHeaders;
 
   constructor(
@@ -21,6 +21,7 @@ export class AuthService {
 
 
   async postNewUser(data: User) {
+    console.log(data)
     return await this.http.post(`${this.url}/register`, data, {headers: this.header}).toPromise()
   }
 

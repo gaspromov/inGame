@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth/auth.service';
+import { OutputAuthService } from 'src/app/shared/outputAuth/output-auth.service';
 import { User } from 'src/app/shared/interfaces/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {Md5} from 'ts-md5/dist/md5';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,11 +16,18 @@ export class SignInComponent implements OnInit {
   formSignIn: FormGroup;
   disabled = false;
   message: string = '';
+  typeUser: string;
 
   constructor(
     private auth: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private parent: OutputAuthService
+  ) {
+    this.activatedRoute.params.subscribe( params => {
+      this.setUserType(params);
+    }) 
+  }
 
   ngOnInit(): void {
     this.formSignIn = new FormGroup({
@@ -27,6 +35,12 @@ export class SignInComponent implements OnInit {
       password: new FormControl({ value: '', disabled: this.disabled }, [Validators.required])
     })
     // document.getElementById('name').innerHTML += "PPP"
+  }
+
+  
+  setUserType(params: any = {}){
+    this.typeUser = params.type;
+    this.parent.emitChange(this.typeUser);
   }
 
   async logIn(){

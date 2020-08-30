@@ -3,7 +3,8 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 import { User } from 'src/app/shared/interfaces/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {Md5} from 'ts-md5/dist/md5';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { OutputAuthService } from 'src/app/shared/outputAuth/output-auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,43 +13,59 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   message: string = "";
-  @Input() typeUser: string;
   formSignUp: FormGroup;
   user: any = {};
   disabled = false;
   password_repeat: string = "";
+  typeUser: string;
 
 
   constructor(
     private auth: AuthService,
     private router: Router,
+    private parent: OutputAuthService,
+    private activetedRoute: ActivatedRoute,
+  ){ 
+    this.activetedRoute.params.subscribe(params => {
+      this.typeUser = params.type;
+      this.generateFormGroup();
+      this.parent.emitChange(this.typeUser);
 
-  ) { 
+    })
   }
 
+  
+
   ngOnInit() {
+    this.generateFormGroup();
+  }
+
+  generateFormGroup(){
     if (this.typeUser == "advertiser"){
       this.formSignUp = new FormGroup({
         email: new FormControl({ value: '', disabled: this.disabled }, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]),
         password: new FormControl({ value: "", disabled: this.disabled }, [Validators.required]),
         name: new FormControl( { value: "", disabled: this.disabled }, [Validators.required]),
         number: new FormControl( { value: "", disabled: this.disabled }, [Validators.required]),
-        typeUser: new FormControl({value: "advertiser", disabled: this.disabled}),
+        type: new FormControl({value: "advertiser", disabled: this.disabled}),
         telegram: new FormControl({ value: "", disabled: this.disabled })
       })
-    }else{
+    }else if (this.typeUser == "serverowner"){
       this.formSignUp = new FormGroup({
         email: new FormControl({ value: '', disabled: this.disabled }, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]),
         password: new FormControl({ value: "", disabled: this.disabled }, [Validators.required]),
         social: new FormControl({value: '', disabled: this.disabled}),
         name: new FormControl( { value: "", disabled: this.disabled }, [Validators.required]),
         number: new FormControl( { value: "", disabled: this.disabled }, [Validators.required]),
-        typeUser: new FormControl({value: "serverowner", disabled: this.disabled}),
+        type: new FormControl({value: "serverowner", disabled: this.disabled}),
         telegram: new FormControl({ value: "", disabled: this.disabled }, [Validators.required]),
         vk: new FormControl({ value: '', disabled: this.disabled })
-      })
-      
+      })      
+    }else{
+      console.log(this.typeUser);
+      // this.router.navigate(['/sign-up/serverowner'])
     }
+
   }
 
   async signUp(){

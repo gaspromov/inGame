@@ -1,6 +1,20 @@
 .sub-bar{
-    width: 165px;
+
     color: #292929;
+}
+
+@media (min-width: 1801px){
+    .sub-bar{
+        width: 150px;
+        height: 555px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1800px){
+    .sub-bar{
+        width: 110px;
+        height: 370px;
+    }
 }
 
 li{
@@ -17,19 +31,16 @@ li a{
 }
 
 
-.sub-bar{
+/* .sub-bar{
     background-color: #FFDF3B;
     display: grid;
     grid-row-gap: 25px;
     justify-items: center;
     align-self: start;
     padding: 40px 20px;
-    height: 100%;
-    max-height: 520px;
-}
+} */
 
 .sub-bar .name-menu{
-    font-size: 24px;
     font-weight: bold;
 }
 
@@ -43,7 +54,6 @@ li a{
     list-style: none;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 22px;
     display: grid;
     grid-row-gap: 25px;
 }

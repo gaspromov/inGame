@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdversService {
-  url = "https://peaceful-sands-75853.herokuapp.com/api/v1/cpc";
+  url = "https://ingame-ads.herokuapp.com/api/v1/cpc";
   header: HttpHeaders;
   token = localStorage.getItem('accessToken')
 

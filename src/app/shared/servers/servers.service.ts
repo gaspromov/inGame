@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ServersService {
-  url = "https://peaceful-sands-75853.herokuapp.com/api/v1/servers";
+  url = "https://ingame-ads.herokuapp.com/api/v1/servers";
   header: HttpHeaders;
   token = localStorage.getItem('accessToken')
 

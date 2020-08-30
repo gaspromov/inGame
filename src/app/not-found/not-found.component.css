@@ -12,6 +12,16 @@
     justify-items: center;
 }
 
+.img-not-found{
+    justify-self: stretch;
+    align-self: stretch;
+    background-image: url("/assets/img/404.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+
 .body .message-not-found p{
     text-align: center;
 }

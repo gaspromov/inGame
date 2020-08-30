@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { OutputAuthService } from 'src/app/shared/outputAuth/output-auth.service';
 
 
 @Component({
@@ -8,24 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
   auth_method = 'sign-in';
-  typeUser = "serverowner";
+  typeUser: string;
+  typeAuthOutput: string;
 
-  constructor() { 
-  }
+  constructor(
+    private outputAuthService: OutputAuthService
+) {
+    outputAuthService.changeEmitted$.subscribe(type => {
+        this.changeTypeUser(type);
+    });}
 
   ngOnInit(): void {
-    
+
   }
+
 
   changeMethod(method: string){
     this.auth_method = method;
   }
 
-  changeTypeUser(){
-    if (this.typeUser == "serverowner")
-      this.typeUser = "advertiser"
-    else
-      this.typeUser = "serverowner"
+  changeTypeUser(type){
+    if ( type == 'advertiser' )
+      this.typeAuthOutput = 'рекламодателя';
+    else if ( type == 'serverowner' )
+      this.typeAuthOutput = 'серверовладельца';
+    else{
+      return;
+    }
+    this.typeUser = type;
+
   }
 
 }

@@ -8,8 +8,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./new-server.component.css']
 })
 export class NewServerComponent implements OnInit {
-  file: File = null;
-  formData: FormData;
+  // file: File = null;
+  // formData: FormData;
   formAdd: FormGroup;
   disabled: boolean = false;
   selectGame: string = "0";
@@ -25,30 +25,30 @@ export class NewServerComponent implements OnInit {
       port: new FormControl({value: "", disabled: this.disabled}, [Validators.required] ),
       game: new FormControl({value: this.selectGame, disabled: this.disabled}, [Validators.required] ),
       vk: new FormControl({value: "", disabled: this.disabled}, [Validators.required] ),
-      logo: new FormControl({value: "", disabled: this.disabled}, [Validators.required])
+      // logo: new FormControl({value: "", disabled: this.disabled}, [Validators.required])
     })
 
   }
 
-  addPhoto(event){
+  // addPhoto(event){
     
-    let target = event.target || event.srcElement;
-    this.file = target.files.item(0);
+  //   let target = event.target || event.srcElement;
+  //   this.file = target.files.item(0);
 
-    let confirm = document.getElementById('button-upload');
+  //   let confirm = document.getElementById('button-upload');
 
-    if (this.file) {
-      let formData: FormData = new FormData();
-      formData.append('photo', this.file, this.file.name);
-      this.formData = formData;
-      confirm.innerHTML = 'Загружен';
-    }else{
-      confirm.innerHTML = 'Попробуйте еще раз';
-    }
-  }
+  //   if (this.file) {
+  //     let formData: FormData = new FormData();
+  //     formData.append('photo', this.file, this.file.name);
+  //     this.formData = formData;
+  //     confirm.innerHTML = 'Загружен';
+  //   }else{
+  //     confirm.innerHTML = 'Попробуйте еще раз';
+  //   }
+  // }
 
   newServer(){
-    this.formAdd.value.logo = this.formData;
+    // this.formAdd.value.logo = this.formData;
     console.log(this.formAdd.value)
     this.servers.postServer(this.formAdd.value)
     .then((w: any = {}) =>{
@@ -71,8 +71,8 @@ export class NewServerComponent implements OnInit {
     document.getElementById(id).style.display = "none";
     document.getElementsByTagName('main')[0].style.opacity = "1";
     this.formAdd.reset();
-    this.file = null;
-    this.formData = null;
+    // this.file = null;
+    // this.formData = null;
     this.selectGame = '0';
     let confirm = document.getElementById('button-upload');
     confirm.innerHTML = 'Загрузить';

@@ -19,6 +19,14 @@ form{
     
 }
 
+.center{
+    min-height: 480px;
+    align-self: center;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
 .inputs .error{
     width: 300px;
 }
